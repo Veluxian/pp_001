@@ -1,0 +1,6 @@
+@back_pp_001_HostAddress = http://localhost:5052
+
+GET {{back_pp_001_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
