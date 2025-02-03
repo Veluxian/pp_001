@@ -14,9 +14,11 @@ namespace back_pp_001.Controllers
             return Ok("Endpoint working");
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id) {
-            return Ok($"getting the coins {id}");
-        }
+        //[HttpPost]
+
+        //[HttpPut]
+
+        //[HttpDelete]
+
     }
 }
