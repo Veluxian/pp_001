@@ -11,5 +11,7 @@ namespace back_pp_001.Models
         [Required]
         public int IdPurse { get; set; }
 
+        public required Purse Purse { get; set; }
+
     }
 }

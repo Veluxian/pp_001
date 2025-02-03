@@ -7,7 +7,8 @@ namespace back_pp_001.Models
         [Required]
         public int IdCoinType {  get; set; }
        
-        [Required]
-        public string NameCoinType { get; set; }
+        public required string NameCoinType { get; set; }
+
+        public required ICollection<PurseContent> PurseContent { get; set; }
     }
 }
