@@ -5,8 +5,9 @@ export function Navbar(){
     return(
         <nav>
             <ul>
-                <li><Link to= "/"/>Home</li>
-                <li><Link to ="/login" />Login</li>
+                <li><Link to= "/">Home</Link></li>
+                <li><Link to ="/login">Login</Link></li>
+                <li><Link to="/MainInventory">Main inventory</Link></li>
             </ul>
         </nav>
     )
