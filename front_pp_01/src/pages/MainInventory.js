@@ -1,5 +1,5 @@
 import React from "react";
-import { Purse } from "../components";
+import { Purse, Inventory } from "../components";
 
 export function MainInventory(){
     const testCoins = {
@@ -10,12 +10,23 @@ export function MainInventory(){
         platinum: 7
     };
 
+    const testInventory ={
+        id: 1,
+        nombre: "espada",
+        cantidad: 1,
+        precio: 10
+        
+    };
+
     return(
+        <>.
         <div>
-            Esto es una prueba para el monedero
-            <div>
-                <Purse coins={testCoins} />
-            </div>
+            <h1>Esto es una prueba para el monedero</h1>
+            <Purse coins={testCoins} />
         </div>
+        <div>
+            <Inventory data={testInventory} />
+        </div>
+        </>
     );
 }
