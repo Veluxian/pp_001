@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Inventory(data){
+export const Inventory = ({data}) => {
     return(
         <div>
             <table>
@@ -13,12 +13,12 @@ export function Inventory(data){
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.entries(data).map(([Id,Nombre,cantidad,precio]) => (
-                    <tr key={Id}>
-                        <td>{Id}</td>
-                        <td>{Nombre}</td>
-                        <td>{cantidad}</td>
-                        <td>{precio}</td>
+                    {data.map((item) => (
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.nombre}</td>
+                        <td>{item.cantidad}</td>
+                        <td>{item.precio}</td>
                     </tr>
                     ))}
                 </tbody>

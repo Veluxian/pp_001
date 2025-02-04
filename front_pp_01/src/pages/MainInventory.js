@@ -1,7 +1,7 @@
 import React from "react";
 import { Purse, Inventory } from "../components";
 
-export function MainInventory(){
+export const MainInventory = () => {
     const testCoins = {
         copper: 100,
         silver: 50,
@@ -10,13 +10,20 @@ export function MainInventory(){
         platinum: 7
     };
 
-    const testInventory ={
-        id: 1,
+    const testInventory =[
+        {id: 1,
         nombre: "espada",
         cantidad: 1,
-        precio: 10
-        
-    };
+        precio: 10},
+        {id: 101,
+        nombre: "Cola raton",
+        cantidad: 50,
+        precio: 1},
+        {id: 5,
+        nombre: "pocion",
+        cantidad: 5,
+        precio: 40}        
+    ];
 
     return(
         <>.

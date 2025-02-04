@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Purse({coins}){
+export const  Purse = ({coins}) => {
     return(
         <div className="Purse">
             {Object.entries(coins).map(([coinType, amount]) => (
