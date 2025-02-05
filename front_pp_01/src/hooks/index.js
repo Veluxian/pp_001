@@ -1,2 +1,2 @@
-export { useInventory } from "./useInventory";
-export { usePurse} from "./usePurse";
+export { UseInventory } from "./UseInventory";
+export { UsePurse } from "./UsePurse";

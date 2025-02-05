@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { InventoryService } from "../services";
 
-export const useInventory = () =>{
+export const UseInventory = () =>{
     const [items, setItems] = useState([]);
 
     useEffect(() => {
