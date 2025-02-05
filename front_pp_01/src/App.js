@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login } from "./pages";
+import { Home, Login, MainInventory } from "./pages";
 import { Navbar } from "./components";
 
 function App(){
@@ -9,7 +9,8 @@ function App(){
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />           
+                <Route path="/login" element={<Login />} /> 
+                <Route path="/maininventory" element={<MainInventory />} />          
             </Routes>
         </Router>
     );

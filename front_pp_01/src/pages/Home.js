@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Home(){
+export const Home = () => {
     return(
         <div>
             <h1>Primera prueba</h1>
