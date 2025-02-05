@@ -10,6 +10,16 @@ export const getItems = async () =>{
     }
 };
 
+export const getItemById =async (id) => {
+    try{
+        const response = await api.get(`(/items/${id})`);
+        return response.data
+    } catch (error) {
+        console.error('Error al buscar el item:', error)
+        throw error;
+    }
+};
+
 export const addItems = async (itemsData) =>{
     try {
         const response = await api.post('/items', itemsData);
