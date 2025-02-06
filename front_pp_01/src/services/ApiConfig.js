@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: 'https://your-api-url.com/api',
     headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ api.interceptors.response.use(
     (error) =>{
         if (error.response.status === 401) {
             console.error('No autorizado regresando al login');
-            navigate('/Login');
+//            navigate('/Login');
         }
         return Promise.reject(error);
     }

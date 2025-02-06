@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { PurseService } from "../services";
+import { getCurrency } from "../services";
 
-export const UsePurse = () =>{
+export const usePurse = () =>{
     const [coins, setCoins] = useState([]);
 
     useEffect(()=> {
         const TraerMonedero = async () => {
             try {
-                const data = await PurseService.getCurrency();
+                const data = await getCurrency();
                 setCoins(data);
             } catch (error) {
                 console.error("no se pudo traer el monedero", error)
