@@ -1,6 +1,6 @@
 import React from "react";
-import { Purse, Inventory, Button } from "../components";
-import { useInventory, usePurse } from "../hooks"; 
+import { Purse, Inventory, Button, Modal } from "../components";
+import { useInventory, usePurse, useModal } from "../hooks"; 
 
 
 export const MainInventory = () => {
@@ -10,10 +10,7 @@ export const MainInventory = () => {
     
     const coins = {a:1, b:2, c:3};
     const items = [{a1:1, a2:2, a3:3}, {b1:1, b2:2, b3:3}];
-
-    const handleAlert = () => {
-        alert("alerta")
-    };
+    const { isModalOpen, openModal, closeModal } = useModal();
 
     return(
         <>
@@ -25,9 +22,12 @@ export const MainInventory = () => {
             <Inventory data={items} />
         </div>
         <div>
-            <Button onClick={handleAlert} className={"prueba"}>
-                Prueba
+            <Button onClick={openModal} className={"prueba"}>
+                Agrega un item
             </Button>
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                aqui va el contenido
+            </Modal>
         </div>
         </>
     );
