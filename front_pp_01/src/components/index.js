@@ -1,4 +1,4 @@
 export { Navbar } from "./Navbar";
 export { Purse } from "./Purse";
 export { Inventory } from "./Inventory";
-export { CreateButton } from "./Buttons";
+export { Button } from "./Buttons";
