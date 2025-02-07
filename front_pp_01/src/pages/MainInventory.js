@@ -1,5 +1,5 @@
 import React from "react";
-import { Purse, Inventory, Button, Modal } from "../components";
+import { Purse, Inventory, Button, Modal, AddObject } from "../components";
 import { useInventory, usePurse, useModal } from "../hooks"; 
 
 
@@ -26,7 +26,7 @@ export const MainInventory = () => {
                 Agrega un item
             </Button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
-                aqui va el contenido
+                <AddObject />
             </Modal>
         </div>
         </>
