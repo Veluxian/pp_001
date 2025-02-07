@@ -4,9 +4,9 @@ namespace back_pp_001.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CoinController : ControllerBase
+    public class CoinTypeController : ControllerBase
     {
-        public CoinController() {
+        public CoinTypeController() {
         }
 
         [HttpGet]
