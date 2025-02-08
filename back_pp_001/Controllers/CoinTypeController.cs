@@ -13,12 +13,5 @@ namespace back_pp_001.Controllers
         public IActionResult GetAll() {
             return Ok("Endpoint working");
         }
-
-        //[HttpPost]
-
-        //[HttpPut]
-
-        //[HttpDelete]
-
     }
 }
