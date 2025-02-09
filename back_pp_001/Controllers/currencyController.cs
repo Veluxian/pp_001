@@ -1,5 +1,7 @@
 ﻿using back_pp_001.Data;
+using back_pp_001.DTO;
 using back_pp_001.Models;
+using back_pp_001.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -10,24 +12,18 @@ namespace back_pp_001.Controllers
     [Route("api/currency")]
     public class currencyController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ICurrencyInterface _CurrencyService;
 
-        public currencyController(ApplicationDbContext context)
+        public currencyController(ICurrencyInterface CurrencyService)
         {
-            _context = context;
+            _CurrencyService = CurrencyService;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CoinType>>> GetCoins()
+        [HttpGet("acutalCurrency")]
+        public ActionResult<IEnumerable<PurseWithContentInfo>> GetActualCurrency()
         {
-            var coins = await _context.CoinTypes.ToListAsync();
-
-            if (coins == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(coins);
+            var actualCurrency =_CurrencyService.GetActualCurrency();
+            return Ok(actualCurrency);
         }
     }
 }
