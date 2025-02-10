@@ -1,6 +1,6 @@
 import React from "react";
-import { Purse, Inventory, Button, Modal, AddObject } from "../components";
-import { useInventory, usePurse, useModal } from "../hooks"; 
+import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
+import { useInventory, usePurse, useModal } from "../../hooks"; 
 
 
 export const MainInventory = () => {
