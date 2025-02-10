@@ -1,12 +1,22 @@
 import React from "react";
 
-export const  Purse = ({coins}) => {
+export const  Purse = ({currency}) => {
+    if (!currency || !Array.isArray(currency)) {
+        return(<div> no hay datos</div>)
+    }
+    
     return(
         <div className="Purse">
-            {Object.entries(coins).map(([coinType, amount]) => (
-                <div key={coinType} className="coin-type">
-                    <span className="coin-amount">{amount}</span>
-                    <span className="coin-name">{coinType}</span>
+            {currency.map((purse) => (
+                <div key={purse.idPurse}>
+                    <h3> Monedero numero : {purse.idPurse}</h3>
+                    <ul>
+                        {purse.coins.map((coins) => (
+                            <li key={coins}>
+                                Tipo de moneda : {coins.coinType}, Cantidad: {coins.quantity}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             ))}
         </div>

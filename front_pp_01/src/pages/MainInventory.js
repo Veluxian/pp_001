@@ -8,7 +8,22 @@ export const MainInventory = () => {
     //const {items} = usePurse();
     //const {coins} = useInventory();
     
-    const coins = {a:1, b:2, c:3};
+    const currency = [
+        {
+            idPurse : 1, 
+            coins: [
+            { coinType: "oro", quantity : 10}, 
+            {coinType :"plata", quantity:20},
+            ]
+        },
+        {
+            idPurse :2,
+            coins: [
+                { coinType :"electrum", quantity: 5},
+                {coinType: "platinum", quantity: 2},
+            ]
+        },
+    ];
     const items = [{a1:1, a2:2, a3:3}, {b1:1, b2:2, b3:3}];
     const { isModalOpen, openModal, closeModal } = useModal();
 
@@ -16,7 +31,7 @@ export const MainInventory = () => {
         <>
         <div>
             <h1>Esto es una prueba para el monedero</h1>
-            <Purse coins={coins} />
+            <Purse currency={currency} />
         </div>
         <div>
             <Inventory data={items} />
