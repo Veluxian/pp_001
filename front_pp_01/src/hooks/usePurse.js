@@ -13,7 +13,11 @@ export const usePurse = () =>{
                 console.error("no se pudo traer el monedero", error)
             }
         };
-        TraerMonedero();
+        if (!coins.length){
+            TraerMonedero();
+        };
     });
     return {coins};
 };
+
+// {currency: coins}

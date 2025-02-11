@@ -5,9 +5,9 @@ import { useInventory, usePurse, useModal } from "../../hooks";
 
 export const MainInventory = () => {
     
-    //const {items} = usePurse();
+    const {coins} = usePurse();
     //const {coins} = useInventory();
-    
+   /* 
     const currency = [
         {
             idPurse : 1, 
@@ -24,6 +24,7 @@ export const MainInventory = () => {
             ]
         },
     ];
+*/
     const items = [{a1:1, a2:2, a3:3}, {b1:1, b2:2, b3:3}];
     const { isModalOpen, openModal, closeModal } = useModal();
 
@@ -31,7 +32,7 @@ export const MainInventory = () => {
         <>
         <div>
             <h1>Esto es una prueba para el monedero</h1>
-            <Purse currency={currency} />
+            <Purse currency={coins} />
         </div>
         <div>
             <Inventory data={items} />
