@@ -1,5 +1,6 @@
 import React from "react";
-import "./home.scss";
+import '../../assets/styles/index.scss';
+
 export const Home = () => {
     return(
         <div className="container">
