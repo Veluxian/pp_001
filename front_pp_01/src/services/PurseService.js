@@ -10,3 +10,13 @@ export const getCurrency = async () => {
         throw error;
     }
 };
+
+export const getCurrencyById = async (id) => {
+    try{
+        const response = await api.get(`/${id}`)
+        return response.data
+    } catch (error) {
+        console.error('error al traer el monedero',error);
+        throw error;
+    }
+};

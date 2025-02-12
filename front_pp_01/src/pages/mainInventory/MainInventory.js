@@ -1,11 +1,12 @@
 import React from "react";
 import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
-import { useInventory, usePurse, useModal } from "../../hooks"; 
+import { useInventory, usePurse, useModal, usePurseById} from "../../hooks"; 
 
 
 export const MainInventory = () => {
     
     const {coins} = usePurse();
+    // const {coins} =usePurseById(1);
     //const {coins} = useInventory();
    /* 
     const currency = [
