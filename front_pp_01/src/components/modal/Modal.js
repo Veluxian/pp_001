@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./Buttons";
+import { Button } from "../../components";
 
 export const Modal = ({isOpen, onClose, children}) => {
     if (!isOpen) return null;

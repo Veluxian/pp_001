@@ -7,20 +7,21 @@ using back_pp_001.DTO;
 
 namespace back_pp_001.Services
 {
-    public class CurrencyService : ICurrencyInterface
+    public class CurrencyByIdService : ICurrencyByIdInterface
     {
         private readonly ApplicationDbContext _context;
 
-        public CurrencyService(ApplicationDbContext context)
+        public CurrencyByIdService(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        public IEnumerable<PurseWithContentInfo> GetActualCurrency()
+        
+        public IEnumerable<PurseWithContentInfo> GetCurrencyById(int id)
         {
-            var pursesWithCoins = _context.Purses
+            var currencyById = _context.Purses
                 .Include(p => p.PurseContent)
                 .ThenInclude(p => p.CoinType)
+                .Where(p => p.IdPurse == id)
                 .Select(pc => new PurseWithContentInfo
                 {
                     IdPurse = pc.IdPurse,
@@ -30,8 +31,7 @@ namespace back_pp_001.Services
                         Quantity = pc.Quantity
                     }).ToList()
                 }).ToList();
-            return pursesWithCoins;
+            return currencyById;
         }
-
     }
 }

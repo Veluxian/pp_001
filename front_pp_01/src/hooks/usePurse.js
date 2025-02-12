@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCurrency } from "../services";
+import { getCurrency, getCurrencyById } from "../services";
 
 export const usePurse = () =>{
     const [coins, setCoins] = useState([]);
@@ -10,10 +10,33 @@ export const usePurse = () =>{
                 const data = await getCurrency();
                 setCoins(data);
             } catch (error) {
-                console.error("no se pudo traer el monedero", error)
+                console.error("no se pudo traer el monedero", error);
             }
         };
-        TraerMonedero();
+        if (!coins.length){
+            TraerMonedero();
+        };
     });
     return {coins};
 };
+
+export const usePurseById = (id) =>{
+    const [coins, setCoins] = useState([]);
+
+    useEffect(() =>{
+        const TraerMonederoId = async (id) =>{
+            try{
+                const data = await getCurrencyById(id);
+                setCoins(data);
+            } catch (error){
+                console.error('error al traer el monedero y dinero', error);
+            };
+        };
+        if (!coins.length){
+            TraerMonederoId(id);
+        };
+        return {coins};
+    });
+};
+
+// {currency: coins}

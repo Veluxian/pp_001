@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { addItems } from "../../services";
-import { Button } from "../Buttons";
+import { Button } from "../../components";
 
 export const AddObject = () => {
     

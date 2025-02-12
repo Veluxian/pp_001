@@ -4,7 +4,7 @@ import axios from "axios";
 //const navigate = useNavigate();
 
 export const api = axios.create({
-    baseURL: 'https://your-api-url.com/api',
+    baseURL: 'https://localhost:7270/api',
     headers: {
         'Content-Type': 'application/json',
     },
