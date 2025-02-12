@@ -13,7 +13,9 @@ export const useInventory = () =>{
                 console.error("no se pudo traer los items:", error)
             }
         };
-        TraerItems();
+        if (!items.length){
+            TraerItems();
+        };
     });
-    return {items}
+    return {items};
 };

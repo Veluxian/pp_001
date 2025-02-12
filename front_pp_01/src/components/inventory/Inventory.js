@@ -1,8 +1,12 @@
 import React from "react";
 
 export const Inventory = ({data}) => {
+    if (!data || Array.isArray(data)) {
+        return(<div class="container d-flex justify-content-center"> no hay objetos </div>)
+    }
+    
     return(
-        <div>
+        <div class="container d-flex justify-content-center">
             <table>
                 <thead>
                     <tr>
