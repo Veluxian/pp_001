@@ -22,10 +22,9 @@ export const usePurse = () =>{
 
 export const usePurseById = (id) =>{
     const [coins, setCoins] = useState([]);
-    const id = id;
 
     useEffect(() =>{
-        TraerMonederoId = async (id) =>{
+        const TraerMonederoId = async (id) =>{
             try{
                 const data = await getCurrencyById(id);
                 setCoins(data);
