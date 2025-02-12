@@ -22,7 +22,7 @@ namespace back_pp_001.Controllers
         [HttpGet("acutalCurrency")]
         public ActionResult<IEnumerable<PurseWithContentInfo>> GetActualCurrency()
         {
-            var actualCurrency =_CurrencyService.GetActualCurrency();
+            var actualCurrency = _CurrencyService.GetActualCurrency();
             return Ok(actualCurrency);
         }
     }

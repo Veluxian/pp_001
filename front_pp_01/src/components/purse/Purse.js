@@ -13,7 +13,7 @@ export const  Purse = ({currency}) => {
                     <ul>
                         {purse.coins.map((coins) => (
                             <li key={coins}>
-                                Tipo de moneda : {coins.coinType}, Cantidad: {coins.quantity}
+                                Tipo de moneda : {coins.coinName}, Cantidad: {coins.quantity}
                             </li>
                         ))}
                     </ul>
@@ -22,4 +22,3 @@ export const  Purse = ({currency}) => {
         </div>
     );
 }
-//<span className={"`coin-icon ${cointype}-icon`"}></span>
