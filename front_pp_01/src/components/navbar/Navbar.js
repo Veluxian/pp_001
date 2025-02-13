@@ -1,24 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import logo from"../../assets/images/icono test.jpg";
+import { Container, NavbarBrand, Nav, Navbar as Nb} from "react-bootstrap";
 
 export const Navbar = () => {
     return(
-        <div class="d-flex justify-content-center">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
+        <Container className="d-flex justify-content-center">
+            <Nb className="bg-body_tertiary">
+                <Container className="container-fluid">
+                    <NavbarBrand href="/">
                         <img src={logo}
                              height="60px"
                              width="60px"
-                             alt="logo"/></a>
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><Link to= "/">Home</Link></li>
-                        <li class="nav-item ms-2 me-2"><Link to ="/login">Login</Link></li>
-                        <li class="nav-item"><Link to="/MainInventory">Main inventory</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                             alt="logo"/></NavbarBrand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/MainInventory">Main inventory</Nav.Link>
+                    </Nav>
+                </Container>
+            </Nb>
+        </Container>
     )
 }

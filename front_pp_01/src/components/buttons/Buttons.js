@@ -1,13 +1,14 @@
 import React from "react";
+import { Button as BT } from "react-bootstrap";
 
 export const Button = ({onClick, children, className, type}) => {
     return(
-        <button
+        <BT
             onClick={onClick}
             className= {className}
             type = {type}
         >
             {children}
-        </button>
+        </BT>
     );
 };

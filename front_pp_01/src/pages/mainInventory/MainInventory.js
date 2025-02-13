@@ -24,6 +24,8 @@ export const MainInventory = () => {
             <Button onClick={openModal} className={"prueba"}>
                 Agrega un item
             </Button>
+        </div>
+        <div class="container d-flex justify-content-center">
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <AddObject />
             </Modal>
