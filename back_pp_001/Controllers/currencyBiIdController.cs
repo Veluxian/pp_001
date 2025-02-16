@@ -20,7 +20,7 @@ namespace back_pp_001.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<PurseWithContentInfo> GetCurrencyById(int id)
+        public ActionResult<IEnumerable<PurseWithContentInfo>> GetCurrencyById(int id)
         {
             var actualCurrencyById = _CurrencyByIdService.GetCurrencyById(id);
             return Ok(actualCurrencyById);
