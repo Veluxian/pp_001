@@ -8,7 +8,7 @@ export const ModalDePrueba = ({isOpen, isClosed, children}) =>{
     return (
         <>
             <Modal show={isOpen} onHide={isClosed} backdrop="static" keyboard={false}>
-                <Modal.Header> 
+                <Modal.Header closeButton> 
                     aqui va el titulo
                 </Modal.Header>
                 <Modal.Body>
