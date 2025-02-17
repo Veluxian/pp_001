@@ -1,14 +1,19 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Modal as MD } from "react-bootstrap";
 
-export const Modal = ({isOpen, children}) => {
+export const Modal = ({isOpen, isClosed,children}) => {
     if (!isOpen) return null;
 
     return (
         <>
-        <Container className="d-flex justify-content-center">
-            {children}
-        </Container>
+        <MD show={isOpen} onHide={isClosed} backdrop="static" keyboard={false}>
+            <MD.Header className="justify-content-center">
+                Agrega tu Objeto
+            </MD.Header>
+            <MD.Body>
+                {children}
+            </MD.Body>
+        </MD>
         </>
     );
 };

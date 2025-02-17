@@ -3,7 +3,7 @@ import { addItems } from "../../services";
 import { Button } from "../../components";
 import { Container, Form } from "react-bootstrap";
 
-export const AddObject = ({onClose}) => {
+export const AddObject = ({isClosed}) => {
     
     const [formData, setFormData]= useState({
         id: 0,
@@ -77,8 +77,8 @@ export const AddObject = ({onClose}) => {
                 <Button type={"submit"} className={"envio"} variant="primary">
                     Añadir
                 </Button>
-                <Button onClick={onClose} className={"boton de prueba"} variant={"danger"}>
-                    Cancelar;
+                <Button onClick={isClosed} className={"boton de prueba"} variant={"danger"}>
+                    Cancelar
                 </Button>
             </Container>
         </Form>

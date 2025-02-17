@@ -7,7 +7,7 @@ export const MainInventory = () => {
     //const {coins} = usePurse();
     //const {coins} =usePurseById(1);
     //const {items} = useInventory();
-    const { isModalOpen, openModal, closeModal } = useModal();
+    const { show, handleShow, handleClose } = useModal();
     const coins = [
         {
             idPurse : 1,
@@ -56,13 +56,13 @@ export const MainInventory = () => {
         </div>
         <Inventory data={items} />
         <div class="container d-flex justify-content-left">
-            <Button onClick={openModal} className={"prueba"} variant={"success"}>
+            <Button onClick={handleShow} className={"prueba"} variant={"success"}>
                 Agrega un item
             </Button>
         </div>
         <div class="container d-flex justify-content-center">
-            <Modal isOpen={isModalOpen}>
-                <AddObject  onClose={closeModal}/>
+            <Modal isOpen={show}>
+                <AddObject  isClosed={handleClose}/>
             </Modal>
         </div>
         </>
