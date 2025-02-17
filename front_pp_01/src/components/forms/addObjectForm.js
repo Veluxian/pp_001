@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { addItems } from "../../services";
 import { Button } from "../../components";
-import { Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 
-export const AddObject = () => {
+export const AddObject = ({onClose}) => {
     
     const [formData, setFormData]= useState({
         id: 0,
@@ -73,10 +73,14 @@ export const AddObject = () => {
                     onChange={handleChange}
                     />
             </Form.Group>
-            
-            <Button type={"submit"} className={"envio"} variant="primary">
-                Añadir
-            </Button>
+            <Container className="d-flex justify-content-center">
+                <Button type={"submit"} className={"envio"} variant="primary">
+                    Añadir
+                </Button>
+                <Button onClick={onClose} className={"boton de prueba"} variant={"danger"}>
+                    Cancelar;
+                </Button>
+            </Container>
         </Form>
     )
 };

@@ -1,17 +1,15 @@
 import React from "react";
 import { Button } from "../../components";
+import { Container } from "react-bootstrap";
 
-export const Modal = ({isOpen, onClose, children}) => {
+export const Modal = ({isOpen, children}) => {
     if (!isOpen) return null;
 
     return (
-        <div className="test-modal">
-            <div classname="content-modal">
-                {children}
-                <Button onClick={onClose} className={"boton de prueba"} variant={"danger"}>
-                    Cancelar;
-                </Button>
-            </div>
-        </div>
+        <>
+        <Container className="d-flex justify-content-center">
+            {children}
+        </Container>
+        </>
     );
 };

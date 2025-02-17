@@ -55,14 +55,14 @@ export const MainInventory = () => {
             <h1>Esto es una prueba para el inventario</h1>
         </div>
         <Inventory data={items} />
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-left">
             <Button onClick={openModal} className={"prueba"} variant={"success"}>
                 Agrega un item
             </Button>
         </div>
         <div class="container d-flex justify-content-center">
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <AddObject />
+            <Modal isOpen={isModalOpen}>
+                <AddObject  onClose={closeModal}/>
             </Modal>
         </div>
         </>
