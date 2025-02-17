@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../../components";
 import { Container } from "react-bootstrap";
 
 export const Modal = ({isOpen, children}) => {
