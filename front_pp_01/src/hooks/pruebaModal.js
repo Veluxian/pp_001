@@ -1,10 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 
-export const useModal = () =>{
+export const PruebaUsarModal = () => {
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     return {show, handleShow ,handleClose};
-};
+}

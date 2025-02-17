@@ -1,13 +1,15 @@
 import React from "react";
+import { Button as BT } from "react-bootstrap";
 
-export const Button = ({onClick, children, className, type}) => {
+export const Button = ({onClick, children, className, type, variant}) => {
     return(
-        <button
+        <BT 
+            variant={variant}
             onClick={onClick}
             className= {className}
             type = {type}
         >
             {children}
-        </button>
+        </BT>
     );
 };

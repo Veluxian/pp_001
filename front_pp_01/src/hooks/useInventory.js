@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getItems } from "../services";
 
 export const useInventory = () =>{
-    const [items, setItems] = useState([]);
+    const [item, setItems] = useState([]);
 
     useEffect(() => {
         const TraerItems = async () => {
@@ -13,7 +13,9 @@ export const useInventory = () =>{
                 console.error("no se pudo traer los items:", error)
             }
         };
-        TraerItems();
+        if (!item.length){
+            TraerItems();
+        };
     });
-    return {items}
+    return {item};
 };

@@ -1,17 +1,19 @@
 import React from "react";
-import { Button } from "../../components";
+import { Modal as MD } from "react-bootstrap";
 
-export const Modal = ({isOpen, onClose, children}) => {
+export const Modal = ({isOpen, isClosed,children}) => {
     if (!isOpen) return null;
 
     return (
-        <div className="test-modal">
-            <div classname="content-modal">
+        <>
+        <MD show={isOpen} onHide={isClosed} backdrop="static" keyboard={false}>
+            <MD.Header className="justify-content-center">
+                Agrega tu Objeto
+            </MD.Header>
+            <MD.Body>
                 {children}
-                <Button onClick={onClose} className={"boton de prueba"}>
-                    &times;
-                </Button>
-            </div>
-        </div>
+            </MD.Body>
+        </MD>
+        </>
     );
 };

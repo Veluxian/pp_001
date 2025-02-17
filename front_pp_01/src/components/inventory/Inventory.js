@@ -1,9 +1,14 @@
 import React from "react";
+import { Table, Container } from "react-bootstrap";
 
 export const Inventory = ({data}) => {
+    if (!data || !Array.isArray(data)) {
+        return(<div class="container d-flex justify-content-center"> no hay objetos </div>)
+    }
+
     return(
-        <div>
-            <table>
+        <Container classname="d-flex justify-content-center">
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -22,7 +27,7 @@ export const Inventory = ({data}) => {
                     </tr>
                     ))}
                 </tbody>
-            </table>
-        </div>
+            </Table>
+        </Container>
     );
 }

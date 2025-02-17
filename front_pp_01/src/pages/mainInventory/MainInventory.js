@@ -1,49 +1,68 @@
 import React from "react";
 import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
-import { useInventory, usePurse, useModal, usePurseById} from "../../hooks"; 
-
+import { useInventory, usePurse, useModal, usePurseById} from "../../hooks";
 
 export const MainInventory = () => {
     
-    const {coins} = usePurse();
-    // const {coins} =usePurseById(1);
-    //const {coins} = useInventory();
-   /* 
-    const currency = [
+    //const {coins} = usePurse();
+    //const {coins} =usePurseById(1);
+    //const {items} = useInventory();
+    const { show, handleShow, handleClose } = useModal();
+    const coins = [
         {
-            idPurse : 1, 
-            coins: [
-            { coinType: "oro", quantity : 10}, 
-            {coinType :"plata", quantity:20},
+            idPurse : 1,
+            coins:[
+                {   
+                    coinName:"oro",
+                    quantity : 10
+                },
+                {
+                    coinName :"plata",
+                    quantity : 20
+                }
             ]
-        },
-        {
-            idPurse :2,
-            coins: [
-                { coinType :"electrum", quantity: 5},
-                {coinType: "platinum", quantity: 2},
-            ]
-        },
+        }
     ];
-*/
-    const items = [{a1:1, a2:2, a3:3}, {b1:1, b2:2, b3:3}];
-    const { isModalOpen, openModal, closeModal } = useModal();
+
+    const items =[
+        {
+            id: 1,
+            nombre:"espada",
+            cantidad: 2,
+            precio: 10
+        },
+        {
+            id:2,
+            nombre: "casco",
+            cantidad: 1,
+            precio: 12
+        },
+        {
+            id:3,
+            nombre:"capa",
+            cantidad:1,
+            precio: 15
+        }
+    ];
 
     return(
         <>
-        <div>
+        <div class="container d-flex justify-content-center">
             <h1>Esto es una prueba para el monedero</h1>
-            <Purse currency={coins} />
         </div>
-        <div>
-            <Inventory data={items} />
+        <Purse currency={coins} />
+        <div class="container d-flex justify-content-center">
+            <h1>Esto es una prueba para el inventario</h1>
         </div>
-        <div>
-            <Button onClick={openModal} className={"prueba"}>
+        <Inventory data={items} />
+        <div class="container d-flex justify-content-left">
+            <Button onClick={handleShow} className={"prueba"} variant={"success"}>
                 Agrega un item
             </Button>
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <AddObject />
+        </div>
+        <div class="container d-flex justify-content-center">
+            <Modal isOpen={show}>
+                <AddObject  isClosed={handleClose}/>
             </Modal>
         </div>
         </>

@@ -1,14 +1,15 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 export const  Purse = ({currency}) => {
     if (!currency || !Array.isArray(currency)) {
-        return(<div> no hay datos</div>)
+        return(<div class="container d-flex justify-content-center"> no hay Monedas</div>)
     }
     
     return(
-        <div className="Purse">
+        <Container className="justify-content-center">
             {currency.map((purse) => (
-                <div key={purse.idPurse}>
+                <Container key={purse.idPurse}>
                     <h3> Monedero numero : {purse.idPurse}</h3>
                     <ul>
                         {purse.coins.map((coins) => (
@@ -17,8 +18,8 @@ export const  Purse = ({currency}) => {
                             </li>
                         ))}
                     </ul>
-                </div>
+                </Container>
             ))}
-        </div>
+        </Container>
     );
 }
