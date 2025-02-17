@@ -8,8 +8,8 @@ export const Modal = ({isOpen, onClose, children}) => {
         <div className="test-modal">
             <div classname="content-modal">
                 {children}
-                <Button onClick={onClose} className={"boton de prueba"}>
-                    &times;
+                <Button onClick={onClose} className={"boton de prueba"} variant={"danger"}>
+                    Cancelar;
                 </Button>
             </div>
         </div>

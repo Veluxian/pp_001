@@ -1,14 +1,49 @@
 import React from "react";
 import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
-import { useInventory, usePurse, useModal, usePurseById} from "../../hooks"; 
-
+import { useInventory, usePurse, useModal, usePurseById} from "../../hooks";
 
 export const MainInventory = () => {
     
-    const {coins} = usePurse();
-    // const {coins} =usePurseById(1);
-    const {items} = useInventory();
+    //const {coins} = usePurse();
+    //const {coins} =usePurseById(1);
+    //const {items} = useInventory();
     const { isModalOpen, openModal, closeModal } = useModal();
+    const coins = [
+        {
+            idPurse : 1,
+            coins:[
+                {   
+                    coinName:"oro",
+                    quantity : 10
+                },
+                {
+                    coinName :"plata",
+                    quantity : 20
+                }
+            ]
+        }
+    ];
+
+    const items =[
+        {
+            id: 1,
+            nombre:"espada",
+            cantidad: 2,
+            precio: 10
+        },
+        {
+            id:2,
+            nombre: "casco",
+            cantidad: 1,
+            precio: 12
+        },
+        {
+            id:3,
+            nombre:"capa",
+            cantidad:1,
+            precio: 15
+        }
+    ];
 
     return(
         <>
@@ -21,7 +56,7 @@ export const MainInventory = () => {
         </div>
         <Inventory data={items} />
         <div class="container d-flex justify-content-center">
-            <Button onClick={openModal} className={"prueba"}>
+            <Button onClick={openModal} className={"prueba"} variant={"success"}>
                 Agrega un item
             </Button>
         </div>

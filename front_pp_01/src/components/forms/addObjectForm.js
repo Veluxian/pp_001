@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addItems } from "../../services";
 import { Button } from "../../components";
+import { Form } from "react-bootstrap";
 
 export const AddObject = () => {
     
@@ -34,46 +35,48 @@ export const AddObject = () => {
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="id">Id</label>
-            <input 
-                type="number"
-                id="id"
-                name="id"
-                value={formData.id}
-                onChange={handleChange}
-                />
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label htmlFor="id">Id</Form.Label>
+                <Form.Control 
+                    type="number"
+                    id="id"
+                    name="id"
+                    value={formData.id}
+                    onChange={handleChange}
+                    />
 
-            <label htmlFor="nombre">nombre</label>
-            <input 
-                type="text"
-                id="nombre"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleChange}
-                />
+                <Form.Label htmlFor="nombre">nombre</Form.Label>
+                <Form.Control 
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    />
 
-            <label htmlFor="cantidad">cantidad</label>
-            <input 
-                type="number"
-                id="cantidad"
-                name="cantidad"
-                value={formData.cantidad}
-                onChange={handleChange}
-                />
+                <Form.Label htmlFor="cantidad">cantidad</Form.Label>
+                <Form.Control 
+                    type="number"
+                    id="cantidad"
+                    name="cantidad"
+                    value={formData.cantidad}
+                    onChange={handleChange}
+                    />
 
-            <label htmlFor="precio">precio</label>
-            <input 
-                type="number"
-                id="precio"
-                name="precio"
-                value={formData.precio}
-                onChange={handleChange}
-                />
+                <Form.Label htmlFor="precio">precio</Form.Label>
+                <Form.Control 
+                    type="number"
+                    id="precio"
+                    name="precio"
+                    value={formData.precio}
+                    onChange={handleChange}
+                    />
+            </Form.Group>
             
-            <Button type={"submit"} className={"envio"}>
+            <Button type={"submit"} className={"envio"} variant="primary">
                 Añadir
             </Button>
-        </form>
+        </Form>
     )
 };
