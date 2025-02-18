@@ -1,6 +1,6 @@
 ﻿using back_pp_001.DTO;
 
-namespace back_pp_001.Services
+namespace back_pp_001.Interfaces
 {
     public interface ICurrencyInterface
     {
