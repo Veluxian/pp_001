@@ -28,10 +28,14 @@ namespace back_pp_001.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Task<PurseWithContentInfo?>> GetCurrencyById(int id)
+        public async Task<ActionResult<PurseWithContentInfo?>> GetCurrencyById(int id)
         {
-            var actualCurrencyById = _CurrencyService.GetCurrencyById(id);
-            return Ok(actualCurrencyById);
+            var actualCurrencyById = await _CurrencyService.GetCurrencyById(id);
+            if (actualCurrencyById == null)
+            {
+                return NotFound();
+            }
+            return (actualCurrencyById);
         }
     }
 }
