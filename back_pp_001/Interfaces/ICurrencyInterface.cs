@@ -5,5 +5,7 @@ namespace back_pp_001.Interfaces
     public interface ICurrencyInterface
     {
         IEnumerable<PurseWithContentInfo> GetActualCurrency();
+
+        Task<PurseWithContentInfo?> GetCurrencyById(int id);
     }
 }
