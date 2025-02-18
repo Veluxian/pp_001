@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 export const  Purse = ({currency}) => {
     if (!currency || !Array.isArray(currency)) {
@@ -7,17 +7,21 @@ export const  Purse = ({currency}) => {
     }
     
     return(
-        <Container className="justify-content-center">
+        <Container className="d-flex justify-content-center">
             {currency.map((purse) => (
-                <Container key={purse.idPurse}>
-                    <h3> Monedero numero : {purse.idPurse}</h3>
-                    <ul>
-                        {purse.coins.map((coins) => (
-                            <li key={coins}>
-                                Tipo de moneda : {coins.coinName}, Cantidad: {coins.quantity}
-                            </li>
-                        ))}
-                    </ul>
+                <Container key={purse.idPurse} className="d-flex justify-content-center">
+                    <Row>
+                        <h3> Monedero numero : {purse.idPurse}</h3>
+                    </Row>
+                    <Row>
+                        <ul>
+                            {purse.coins.map((coins) => (
+                                <li key={coins}>
+                                    Tipo de moneda : {coins.coinName}, Cantidad: {coins.quantity}
+                                </li>
+                            ))}
+                        </ul>
+                    </Row>
                 </Container>
             ))}
         </Container>
