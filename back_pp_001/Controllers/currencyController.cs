@@ -37,5 +37,11 @@ namespace back_pp_001.Controllers
             }
             return (actualCurrencyById);
         }
+
+        [HttpPut("{id}")]
+        public void placeholder()
+        {
+
+        }
     }
 }

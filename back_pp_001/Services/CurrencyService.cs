@@ -50,5 +50,10 @@ namespace back_pp_001.Services
                 }).FirstOrDefaultAsync();
             return currencyById;
         }
+
+        public async Task<PurseWithContentInfo> AddSelledItem(int idPurse, int idItem)
+        {
+
+        }
     }
 }

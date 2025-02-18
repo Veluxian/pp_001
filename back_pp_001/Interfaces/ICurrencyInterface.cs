@@ -7,5 +7,7 @@ namespace back_pp_001.Interfaces
         IEnumerable<PurseWithContentInfo> GetActualCurrency();
 
         Task<PurseWithContentInfo?> GetCurrencyById(int id);
+
+        Task<PurseWithContentInfo?> AddSelledItem(int id);
     }
 }
