@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using back_pp_001.Data;
 using back_pp_001.Models;
 using back_pp_001.DTO;
+using back_pp_001.Interfaces;
 
 namespace back_pp_001.Services
 {
