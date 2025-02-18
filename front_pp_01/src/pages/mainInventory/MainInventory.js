@@ -1,6 +1,7 @@
 import React from "react";
 import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
 import { useInventory, usePurse, useModal, usePurseById} from "../../hooks";
+import { Container } from "react-bootstrap";
 
 export const MainInventory = () => {
     
@@ -47,9 +48,9 @@ export const MainInventory = () => {
 
     return(
         <>
-        <div class="container d-flex justify-content-center">
+        <Container className="d-flex justify-content-center">
             <h1>Esto es una prueba para el monedero</h1>
-        </div>
+        </Container>
         <Purse currency={coins} />
         <div class="container d-flex justify-content-center">
             <h1>Esto es una prueba para el inventario</h1>
