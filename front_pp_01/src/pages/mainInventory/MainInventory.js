@@ -52,20 +52,20 @@ export const MainInventory = () => {
             <h1>Esto es una prueba para el monedero</h1>
         </Container>
         <Purse currency={coins} />
-        <div class="container d-flex justify-content-center">
+        <Container class="container d-flex justify-content-center">
             <h1>Esto es una prueba para el inventario</h1>
-        </div>
+        </Container>
         <Inventory data={items} />
-        <div class="container d-flex justify-content-left">
+        <Container className="d-flex justify-content-left">
             <Button onClick={handleShow} className={"prueba"} variant={"success"}>
                 Agrega un item
             </Button>
-        </div>
-        <div class="container d-flex justify-content-center">
+        </Container>
+        <Container className="d-flex justify-content-center">
             <Modal isOpen={show}>
                 <AddObject  isClosed={handleClose}/>
             </Modal>
-        </div>
+        </Container>
         </>
     );
 }
