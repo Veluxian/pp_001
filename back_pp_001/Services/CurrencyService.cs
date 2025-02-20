@@ -33,6 +33,27 @@ namespace back_pp_001.Services
                 }).ToList();
             return pursesWithCoins;
         }
+        public async Task<PurseWithContentInfo?> GetCurrencyById(int id)
+        {
+            var currencyById = await _context.Purses
+                .Include(p => p.PurseContent)
+                .ThenInclude(p => p.CoinType)
+                .Where(p => p.IdPurse == id)
+                .Select(pc => new PurseWithContentInfo
+                {
+                    IdPurse = pc.IdPurse,
+                    Coins = pc.PurseContent.Select(pc => new CoinQuantity
+                    {
+                        CoinName = pc.CoinType.NameCoinType,
+                        Quantity = pc.Quantity
+                    }).ToList()
+                }).FirstOrDefaultAsync();
+            return currencyById;
+        }
 
+        public async Task<PurseWithContentInfo> AddSelledItem(int idPurse, int idItem)
+        {
+
+        }
     }
 }
