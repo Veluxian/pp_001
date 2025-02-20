@@ -20,3 +20,13 @@ export const getCurrencyById = async (id) => {
         throw error;
     }
 };
+
+export const addSelledItem = async (idPurse, data) =>{
+    try{
+        const response = await api.put(`/${idPurse}/`,data)
+        return response.data
+    } catch (error) {
+        console.error('Ups Al parecer el vendedor no quiere esto', error);
+        throw error;
+    }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCurrency, getCurrencyById } from "../services";
+import { getCurrency, getCurrencyById, addSelledItem } from "../services";
 
 export const usePurse = () =>{
     const [coins, setCoins] = useState([]);
@@ -37,6 +37,26 @@ export const usePurseById = (id) =>{
         };
         return {coins};
     });
+
 };
 
-// {currency: coins}
+export const useAddSelledItem = (idPurse, data) => {
+    const [updated, setUpdates] = useState([]);
+
+    useEffect (() =>{
+    const VenderObjeto = async (idPurse, data) => {
+        try{
+            const result = await addSelledItem(idPurse, data);
+            setUpdates(result);
+        } catch (error) {
+            console.error('hubo un error')
+        };
+    };
+
+    if (!updated.length){
+        VenderObjeto(idPurse, data); 
+    };
+    
+    return {updated};
+    });
+};
