@@ -1,6 +1,4 @@
-﻿
-
-using back_pp_001.Models;
+﻿using back_pp_001.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

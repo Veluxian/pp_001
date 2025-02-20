@@ -53,7 +53,7 @@ namespace back_pp_001.Services
 
         public async Task<PurseWithContentInfo> AddSelledItem(int idPurse, int idItem)
         {
-
+            var sellById = _context.
         }
     }
 }
