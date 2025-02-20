@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import "../../assets/styles/index.scss"
 
 export const  Purse = ({currency}) => {
     if (!currency || !Array.isArray(currency)) {
@@ -7,7 +8,7 @@ export const  Purse = ({currency}) => {
     }
     
     return(
-            <Container className="d-flex justify-content-center">
+            <Container className="monedero justify-content-center w-50">
                 {currency.map((purse) => (
                 <Container key={purse.idPurse} className="justify-content-center">
                     <Row className="justify-content-md-center">
