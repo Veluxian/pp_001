@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Container } from "react-bootstrap";
+import { Button } from "../../components";
 
 export const Inventory = ({data}) => {
     if (!data || !Array.isArray(data)) {
@@ -15,6 +16,7 @@ export const Inventory = ({data}) => {
                         <th>Nombre</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +26,10 @@ export const Inventory = ({data}) => {
                         <td>{item.nombre}</td>
                         <td>{item.cantidad}</td>
                         <td>{item.precio}</td>
+                        <td>
+                            <Button onClick={"a"} variant={"success"}>V</Button>
+                            <Button onClick={"a"} variant={"danger"}>E</Button>
+                        </td>
                     </tr>
                     ))}
                 </tbody>
