@@ -33,6 +33,7 @@ namespace back_pp_001.Services
                 }).ToList();
             return pursesWithCoins;
         }
+
         public async Task<PurseWithContentInfo?> GetCurrencyById(int id)
         {
             var currencyById = await _context.Purses
@@ -53,7 +54,8 @@ namespace back_pp_001.Services
 
         public async Task<PurseWithContentInfo> AddSelledItem(int idPurse, int idItem)
         {
-            var sellById = _context.
+            return null;
         }
+
     }
 }

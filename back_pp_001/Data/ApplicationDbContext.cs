@@ -20,6 +20,5 @@ namespace back_pp_001.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
-
     }
 }
