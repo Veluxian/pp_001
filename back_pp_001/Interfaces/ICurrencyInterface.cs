@@ -8,6 +8,6 @@ namespace back_pp_001.Interfaces
 
         Task<PurseWithContentInfo?> GetCurrencyById(int id);
 
-        Task<PurseWithContentInfo?> AddSelledItem(int id);
+        Task<PurseWithContentInfo?> AddSelledItem(PurseWithContentInfo updatedPurse);
     }
 }

@@ -13,6 +13,7 @@ namespace back_pp_001.Data.Configuration
             builder.ToTable("MONEDERO");
             builder.HasKey(e => e.IdPurse);
             builder.Property(e => e.IdPurse).HasColumnName("id_monedero");
+            builder.Property(e => e.Quantity).HasColumnName("dinero_total");
         }
     }
 }

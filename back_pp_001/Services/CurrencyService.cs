@@ -5,6 +5,7 @@ using back_pp_001.Data;
 using back_pp_001.Models;
 using back_pp_001.DTO;
 using back_pp_001.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace back_pp_001.Services
 {
@@ -20,40 +21,38 @@ namespace back_pp_001.Services
         public IEnumerable<PurseWithContentInfo> GetActualCurrency()
         {
             var pursesWithCoins = _context.Purses
-                .Include(p => p.PurseContent)
-                .ThenInclude(p => p.CoinType)
                 .Select(pc => new PurseWithContentInfo
                 {
                     IdPurse = pc.IdPurse,
-                    Coins = pc.PurseContent.Select(pc => new CoinQuantity
-                    {
-                        CoinName = pc.CoinType.NameCoinType,
-                        Quantity = pc.Quantity
-                    }).ToList()
+                    Quantity = pc.Quantity
                 }).ToList();
             return pursesWithCoins;
         }
         public async Task<PurseWithContentInfo?> GetCurrencyById(int id)
         {
             var currencyById = await _context.Purses
-                .Include(p => p.PurseContent)
-                .ThenInclude(p => p.CoinType)
                 .Where(p => p.IdPurse == id)
                 .Select(pc => new PurseWithContentInfo
                 {
                     IdPurse = pc.IdPurse,
-                    Coins = pc.PurseContent.Select(pc => new CoinQuantity
-                    {
-                        CoinName = pc.CoinType.NameCoinType,
-                        Quantity = pc.Quantity
-                    }).ToList()
+                    Quantity = pc.Quantity
                 }).FirstOrDefaultAsync();
             return currencyById;
         }
 
-        public async Task<PurseWithContentInfo> AddSelledItem(int idPurse, int idItem)
+        public async Task<PurseWithContentInfo?> AddSelledItem(PurseWithContentInfo updatedPurse)
         {
+            var actualCurrency = await _context.Purses
+                .FirstOrDefaultAsync(p => p.IdPurse == updatedPurse.IdPurse);
 
+            actualCurrency.Quantity = updatedPurse.Quantity;
+
+            _context.Purses.Update(actualCurrency);
+
+            await _context.SaveChangesAsync();
+
+            return updatedPurse;
+            
         }
     }
 }

@@ -39,9 +39,10 @@ namespace back_pp_001.Controllers
         }
 
         [HttpPut("{id}")]
-        public void placeholder()
+        public async Task<ActionResult<PurseWithContentInfo>>AddSelledItem(PurseWithContentInfo updatedPurse)
         {
-
+            var itemSelled = await _CurrencyService.AddSelledItem(updatedPurse);
+            return Ok(itemSelled);
         }
     }
 }

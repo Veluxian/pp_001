@@ -3,6 +3,6 @@
     public class PurseWithContentInfo
     {
         public required int IdPurse { get; set; }
-        public required List<CoinQuantity> Coins { get; set; }
+        public required int Quantity {  get; set; }
     }
 }
