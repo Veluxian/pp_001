@@ -2,8 +2,14 @@
 {
     public class Item
     {
-        public int idItem { get; set; }
-        public string? nameItem { get; set; }
-        public int price { get; set; }
+        public int IdItem { get; set; }
+        public string? ItemName { get; set; }
+        public string? ItemDescription { get; set; }
+        public int ItemWeight { get; set; }
+        public int ItemPrice { get; set; }
+        public int IdItemType { get; set; }
+
+        public required ItemType ItemType { get; set; }
+        public required ICollection<ItemsCollection> ItemCollection { get; set; }
     }
 }

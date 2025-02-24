@@ -15,10 +15,15 @@ namespace back_pp_001.Data.Configuration
             builder.Property(e => e.IdInventory).HasColumnName("id_inventario");
             builder.Property(e => e.TotalWeight).HasColumnName("peso_total");
             builder.Property(e => e.IdPurse).HasColumnName("id_monedero");
+            builder.Property(e => e.IdContainer).HasColumnName("id_contenedor");
             
             builder.HasOne(e => e.Purse)
                    .WithMany(u => u.Inventory)
                    .HasForeignKey(e => e.IdPurse);
+
+            builder.HasMany(e => e.Container)
+                   .WithOne(u => u.Inventory)
+                   .HasForeignKey(e => e.IdContainer);
         }
     }
 }

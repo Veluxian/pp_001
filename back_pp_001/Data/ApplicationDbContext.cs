@@ -13,7 +13,6 @@ namespace back_pp_001.Data
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Purse> Purses { get; set; }
 
-        public DbSet<Item> Items { get; set; } 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

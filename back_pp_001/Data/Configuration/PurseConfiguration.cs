@@ -11,7 +11,9 @@ namespace back_pp_001.Data.Configuration
         public void Configure(EntityTypeBuilder<Purse> builder)
         {
             builder.ToTable("MONEDERO");
+
             builder.HasKey(e => e.IdPurse);
+
             builder.Property(e => e.IdPurse).HasColumnName("id_monedero");
             builder.Property(e => e.Quantity).HasColumnName("dinero_total");
         }
