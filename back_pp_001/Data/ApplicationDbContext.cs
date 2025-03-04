@@ -10,7 +10,11 @@ namespace back_pp_001.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+        public DbSet<Container> containers { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Item> items { get; set; }
+        public DbSet<ItemsCollection> itemsCollections { get; set; }
+        public DbSet<ItemType> itemTypes { get; set; }
         public DbSet<Purse> Purses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
