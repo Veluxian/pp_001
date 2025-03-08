@@ -15,6 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ICurrencyInterface, CurrencyService>();
+builder.Services.AddScoped<IItemInterface, ItemService>();
 
 builder.Services.AddCors(options =>
 {
