@@ -29,3 +29,13 @@ export const addItems = async (itemsData) =>{
         throw error
     }
 };
+
+export const deleteItem = async (id) =>{
+    try{
+        const response = await api.delete(`/items/sell${id}`);
+        return response.data
+    } catch (error) {
+        console.error('Error al vender', error)
+        throw error;
+    }
+};

@@ -29,4 +29,4 @@ export const addSelledItem = async (idPurse, data) =>{
         console.error('Ups Al parecer el vendedor no quiere esto', error);
         throw error;
     }
-}
+};

@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Container } from "react-bootstrap";
 import { Button } from "../../components";
 
-export const Inventory = ({data}) => {
+export const Inventory = ({data, onDelete, onSell}) => {
     if (!data || !Array.isArray(data)) {
         return(<div class="container d-flex justify-content-center"> no hay objetos </div>)
     }
@@ -27,8 +27,8 @@ export const Inventory = ({data}) => {
                         <td>{item.cantidad}</td>
                         <td>{item.precio}</td>
                         <td>
-                            <Button onClick={"a"} variant={"success"}>V</Button>
-                            <Button onClick={"a"} variant={"danger"}>E</Button>
+                            <Button onClick={onSell} variant={"success"}>V</Button>
+                            <Button onClick={onDelete} variant={"danger"}>E</Button>
                         </td>
                     </tr>
                     ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Purse, Inventory, Button, Modal, AddObject } from "../../components";
-import { useInventory, usePurse, useModal, usePurseById} from "../../hooks";
+import { useInventory, usePurse, useModal, usePurseById, handleSell,handleDelete} from "../../hooks";
 import { Container } from "react-bootstrap";
 import "../../assets/styles/index.scss"
 
@@ -56,7 +56,7 @@ export const MainInventory = () => {
         <Container className="titulo-inventario d-flex justify-content-center">
             <h1>Esto es una prueba para el inventario</h1>
         </Container>
-        <Inventory data={items} />
+        <Inventory data={items} onSell={handleSell} onDelete={handleDelete} />
         <Container className="d-flex justify-content-left">
             <Button onClick={handleShow} className={"prueba"} variant={"success"}>
                 Agrega un item

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getItems } from "../services";
+import { getItems, addSelledItem, deleteItem } from "../services";
 
 export const useInventory = () =>{
     const [item, setItems] = useState([]);
@@ -19,3 +19,11 @@ export const useInventory = () =>{
     });
     return {item};
 };
+
+export const handleSell = (id) =>{
+   return null
+};
+
+export const handleDelete = (id) =>{
+    return null
+}
