@@ -8,7 +8,9 @@ services:
       - ./front_pp_01:/app
       - /app/node_modules
     environment:
-      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - WATCHPACK_INTERVAL=1000
   # backend:
   #   build:
   #     context: ./back_pp_01

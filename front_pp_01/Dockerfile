@@ -2,7 +2,7 @@
 FROM node:20.19.2
 
 # Establece la carpeta de trabajo dentro del contenedor
-WORKDIR /pp_001
+WORKDIR /app
 
 # Copia los archivos de dependencias
 COPY package*.json ./
