@@ -1,12 +1,21 @@
 import React  from "react";
 import {Button}from "../../components"
-import { Container  } from "react-bootstrap";
+import { Container, Row, Col, Card  } from "react-bootstrap";
 
 export const Login = () => {
     return(
         <>
-            <Container className="d-flex justify-content-center">
-                <h1>Esto es una prueba</h1>
+            <Container className="mt-5">
+                <Row className="d-flex justify-content-center">
+                    <Col  md={6}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title> ¡La Aventura Aguarda! </Card.Title>
+                                
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </Container>
         </>
     );

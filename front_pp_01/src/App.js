@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login, MainInventory, Prueba } from "./pages";
+import { Home, Login, MainInventory, Prueba, Register} from "./pages";
 import { Navbar, Layout} from "./components";
 
 function App(){
@@ -12,7 +12,7 @@ function App(){
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} /> 
                     <Route path="/maininventory" element={<MainInventory />} />
-                    <Route path="/prueba" element={<Prueba />} />
+                    <Route path="/singin" element={<Register />} />
                 </Routes>
             </Layout>
         </Router>
