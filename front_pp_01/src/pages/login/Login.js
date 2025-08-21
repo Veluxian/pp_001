@@ -1,5 +1,5 @@
 import React  from "react";
-import {Button}from "../../components"
+import { LoginForm }from "../../components"
 import { Container, Row, Col, Card  } from "react-bootstrap";
 
 export const Login = () => {
@@ -11,7 +11,7 @@ export const Login = () => {
                         <Card>
                             <Card.Body>
                                 <Card.Title> ¡La Aventura Aguarda! </Card.Title>
-                                
+                                <LoginForm />
                             </Card.Body>
                         </Card>
                     </Col>
