@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../components";
-import { Form } from "react-bootstrap";
+import { Form, Nav } from "react-bootstrap";
 
 export const LoginForm = () => {
     const [formData, setFormData] = useState({
@@ -39,6 +39,7 @@ export const LoginForm = () => {
                     onChange={handleInputChange}
                     required />
             </Form.Group>
+            <Nav.Link href="/register">¿Nuevo en la taberna?</Nav.Link>
             <Button type="submit">
                 ¡Adelante!
             </Button>
