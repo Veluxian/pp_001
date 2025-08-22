@@ -1,6 +1,6 @@
 import React  from "react";
 import { LoginForm }from "../../components"
-import { Container, Row, Col, Card  } from "react-bootstrap";
+import { Container, Row, Col, Card, Nav  } from "react-bootstrap";
 
 export const Login = () => {
     return(
@@ -12,6 +12,8 @@ export const Login = () => {
                             <Card.Body>
                                 <Card.Title> ¡La Aventura Aguarda! </Card.Title>
                                 <LoginForm />
+                                <Nav.Link href="/singin">¿Nuevo en la taberna?</Nav.Link>
+                                <Nav.Link href="/recover">¿Necesitas una pocima de recuerdo?</Nav.Link>
                             </Card.Body>
                         </Card>
                     </Col>
