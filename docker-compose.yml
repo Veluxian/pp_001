@@ -11,6 +11,20 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
       - WATCHPACK_INTERVAL=1000
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: db_manage_rpg
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: abc123
+    ports:
+      - "5432:5432"
+volumes:
+  db_data:
   # backend:
   #   build:
   #     context: ./back_pp_01
@@ -20,3 +34,4 @@ services:
   #     - ./back_pp_01:/app
   #   environment:
   #     - ASPNETCORE_ENVIROMENT=development
+  
