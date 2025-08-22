@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../../components";
+import { Button } from "../../../components";
 import { Form } from "react-bootstrap";
 
 export const LoginForm = () => {

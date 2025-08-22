@@ -4,5 +4,5 @@ export { Inventory } from "./inventory/Inventory";
 export { Button } from "./buttons/Buttons";
 export { Modal } from "./modal/Modal";
 export { AddObject } from "./forms/addObjectForm"
-export { LoginForm } from "./forms/loginForm"
+export { LoginForm } from "./forms/loginForms/loginForm"
 export { Layout } from "./layout/Layout"
